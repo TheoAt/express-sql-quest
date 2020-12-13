@@ -184,9 +184,9 @@ app.delete("/api/students/php", (req, res) => {
     "DELETE FROM students WHERE js = 0",
     (err, results) => {
       if (err) {
-        res.status(500).send("😱 Error deleting user(s)");
+        res.status(500).send("😱 Error deleting students(s)");
       } else {
-        res.status(200).send("🎉 User(s) deleted!");
+        res.status(200).send("🎉 Student(s) deleted!");
 
       }
     }
