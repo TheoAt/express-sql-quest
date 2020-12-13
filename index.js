@@ -170,9 +170,9 @@ app.delete("/api/students/:id", (req, res) => {
     (err, results) => {
       if (err) {
         console.log(err);
-        res.status(500).send("😱 Error deleting an user");
+        res.status(500).send("😱 Error deleting an student");
       } else {
-        res.status(200).send("🎉 User deleted!");
+        res.status(200).send("🎉 Student deleted!");
 
       }
     }
