@@ -146,6 +146,22 @@ app.put("/api/students/:id", (req, res) => {
   );
 });
 
+app.put("/api/toggle_students/:id", (req, res) => {
+  const idStudent = req.params.id;
+  connection.query(
+    "UPDATE students SET js = !js WHERE id = ?",
+    [idStudent],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error updating data...");
+      } else {
+        res.status(200).send("Student updated successfully 🎉");
+      }
+    }
+  );
+});
+
 app.delete("/api/students/:id", (req, res) => {
   const idStudent = req.params.id;
   connection.query(
